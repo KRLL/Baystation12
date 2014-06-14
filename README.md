@@ -1,2 +1,2 @@
 # Soviet Station 13
-Coming soon!
+это ветвь разработки StarTrekker
