@@ -48,7 +48,7 @@
 
 	//get message text, limit it's length.and clean/escape html
 	if(!msg)
-		msg = sanitize(input(src,"Message:", "Private message to [key_name(C, 0, holder ? 1 : 0)]") as text|null)
+		msg = /*sanitize(*/input(src,"Message:", "Private message to [key_name(C, 0, holder ? 1 : 0)]") as text|null//)
 
 		if(!msg)	return
 		if(!C)
