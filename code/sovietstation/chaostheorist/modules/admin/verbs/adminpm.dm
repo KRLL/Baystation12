@@ -48,7 +48,7 @@
 
 	//get message text, limit it's length.and clean/escape html
 	if(!msg)
-		msg = /*sanitize(*/input(src,"Message:", "Private message to [key_name(C, 0, holder ? 1 : 0)]") as text|null//)
+		msg = sanitize(input(src,"Message:", "Private message to [key_name(C, 0, holder ? 1 : 0)]") as text|null)
 
 		if(!msg)	return
 		if(!C)
@@ -61,7 +61,7 @@
 
 	//clean the message if it's not sent by a high-rank admin
 	if(!check_rights(R_SERVER|R_DEBUG,0))
-		msg = sanitize(copytext(msg,1,MAX_MESSAGE_LEN))
+//		msg = msg
 		if(!msg)	return
 
 	var/recieve_color = "purple"
@@ -108,16 +108,16 @@
 						adminhelp(reply)													//sender has left, adminhelp instead
 				return
 
-	recieve_message = "<font color='[recieve_color]'>[recieve_pm_type] PM from-<b>[get_options_bar(src, C.holder ? 1 : 0, C.holder ? 1 : 0, 1)]</b>: [sanitize_simple(msg, list("ÿ"="&#1103;", "&#255;"="&#1103;"))]</font>"
+	recieve_message = "<font color='[recieve_color]'>[recieve_pm_type] PM from-<b>[get_options_bar(src, C.holder ? 1 : 0, C.holder ? 1 : 0, 1)]</b>: [msg]</font>"
 	C << recieve_message
-	src << "<font color='blue'>[send_pm_type]PM to-<b>[get_options_bar(C, holder ? 1 : 0, holder ? 1 : 0, 1)]</b>: [sanitize_simple(msg, list("ÿ"="&#1103;", "&#255;"="&#1103;"))]</font>"
+	src << "<font color='blue'>[send_pm_type]PM to-<b>[get_options_bar(C, holder ? 1 : 0, holder ? 1 : 0, 1)]</b>: [msg]</font>"
 
 	//play the recieving admin the adminhelp sound (if they have them enabled)
 	//non-admins shouldn't be able to disable this
 	if(C.prefs.toggles & SOUND_ADMINHELP)
 		C << 'sound/effects/adminhelp.ogg'
 
-	log_admin(html_encode("PM: [key_name(src)]->[key_name(C)]: [sanitize_simple(msg, list("ÿ"="&#1103;", "&#255;"="&#1103;"))]"))
+	log_admin("PM: [key_name(src)]->[key_name(C)]: [msg]")
 
 	//we don't use message_admins here because the sender/receiver might get it too
 	for(var/client/X in admins)
@@ -136,8 +136,6 @@
 
 	if(!msg)
 		return
-
-	sanitize(msg)
 
 	if(length(msg) > 400) // TODO: if message length is over 400, divide it up into seperate messages, the message length restriction is based on IRC limitations.  Probably easier to do this on the bots ends.
 		src << "\red Your message was not sent because it was more then 400 characters find your message below for ease of copy/pasting"
