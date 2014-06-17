@@ -7,6 +7,13 @@
 #define FILE_DIR .
 #define FILE_DIR "code"
 #define FILE_DIR "code/sovietstation"
+#define FILE_DIR "code/sovietstation/KRLL"
+#define FILE_DIR "code/sovietstation/KRLL/icons"
+#define FILE_DIR "code/sovietstation/KRLL/icons/mob"
+#define FILE_DIR "code/sovietstation/KRLL/icons/obj"
+#define FILE_DIR "code/sovietstation/KRLL/icons/obj/clothing"
+#define FILE_DIR "code/sovietstation/KRLL/sound"
+#define FILE_DIR "code/sovietstation/KRLL/sound/items"
 #define FILE_DIR "code/sovietstation/WorkInProgress"
 #define FILE_DIR "code/sovietstation/WorkInProgress/chaostheorist"
 #define FILE_DIR "code/sovietstation/WorkInProgress/chaostheorist/modular_systems"

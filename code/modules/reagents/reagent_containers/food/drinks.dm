@@ -33,7 +33,10 @@
 				if(H.species.flags & IS_SYNTHETIC)
 					H << "\red You have a monitor for a head, where do you think you're going to put that?"
 					return
-
+			var/mob/living/carbon/human/H = M
+			if(!H.can_eat())
+				user << "You need to take the mask off!"
+				return 0
 			M << "\blue You swallow a gulp of [src]."
 			if(reagents.total_volume)
 				reagents.trans_to_ingest(M, gulp_size)
@@ -46,7 +49,9 @@
 			if(H.species.flags & IS_SYNTHETIC)
 				H << "\red They have a monitor for a head, where do you think you're going to put that?"
 				return
-
+			if(!H.can_eat())
+				user << "You need to take the mask off!"
+				return 0
 			for(var/mob/O in viewers(world.view, user))
 				O.show_message("\red [user] attempts to feed [M] [src].", 1)
 			if(!do_mob(user, M)) return

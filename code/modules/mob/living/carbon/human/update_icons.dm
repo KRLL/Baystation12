@@ -411,7 +411,7 @@ proc/get_damage_icon_part(damage_state, body_part)
 
 			face_standing.Blend(facial_s, ICON_OVERLAY)
 
-	if(h_style && !(head && (head.flags & BLOCKHEADHAIR)))
+	if(h_style && !((head && (head.flags & BLOCKHEADHAIR))  || (wear_suit && (wear_suit.flags & BLOCKHEADHAIR))))
 		var/datum/sprite_accessory/hair_style = hair_styles_list[h_style]
 		if(hair_style && src.species.name in hair_style.species_allowed)
 			var/icon/hair_s = new/icon("icon" = hair_style.icon, "icon_state" = "[hair_style.icon_state]_s")

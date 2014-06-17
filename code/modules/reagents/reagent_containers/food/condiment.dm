@@ -27,6 +27,10 @@
 			return 0
 
 		if(M == user)
+			var/mob/living/carbon/human/H = M
+			if(!H.can_eat())
+				user << "You need to take the mask off!"
+				return 0
 			M << "\blue You swallow some of contents of the [src]."
 			if(reagents.total_volume)
 				reagents.trans_to_ingest(M, 10)
@@ -34,7 +38,10 @@
 			playsound(M.loc,'sound/items/drink.ogg', rand(10,50), 1)
 			return 1
 		else if( istype(M, /mob/living/carbon/human) )
-
+			var/mob/living/carbon/human/H = M
+			if(!H.can_eat())
+				user << "You need to take the mask off!"
+				return 0
 			for(var/mob/O in viewers(world.view, user))
 				O.show_message("\red [user] attempts to feed [M] [src].", 1)
 			if(!do_mob(user, M)) return

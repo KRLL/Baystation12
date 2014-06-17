@@ -46,6 +46,10 @@
 				if(H.species.flags & IS_SYNTHETIC)
 					H << "\red You have a monitor for a head, where do you think you're going to put that?"
 					return
+			var/mob/living/carbon/human/H = M
+			if(!H.can_eat())
+				user << "You need to take the mask off!"
+				return 0
 			if (fullness <= 50)
 				M << "\red You hungrily chew out a piece of [src] and gobble it!"
 			if (fullness > 50 && fullness <= 150)
@@ -65,7 +69,10 @@
 					return
 
 			if(!istype(M, /mob/living/carbon/slime))		//If you're feeding it to someone else.
-
+				var/mob/living/carbon/human/H = M
+				if(!H.can_eat())
+					user << "You need to take the mask off!"
+					return 0
 				if (fullness <= (550 * (1 + M.overeatduration / 1000)))
 					for(var/mob/O in viewers(world.view, user))
 						O.show_message("\red [user] attempts to feed [M] [src].", 1)
