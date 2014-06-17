@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-WINDOW: code\yeyti\airspacå\code\shuttles\shuttle.dm;code\yeyti\airspacå\img\aerospace_items.dmi;code\yeyti\airspacå\code\items\jetpack.dm;code\game\objects\items\weapons\tanks\jetpack.dm
+WINDOW: code\yeyti\airspacå\code\shuttles\shuttle.dm;code\yeyti\airspacå\img\aerospace_items.dmi;code\yeyti\airspacå\code\items\jetpack.dm;code\game\objects\items\weapons\tanks\jetpack.dm;code\modules\mob\living\carbon\human\update_icons.dm
 LAST_COMPILE_VERSION: 506.1247
-DIR: code code\_onclick code\ATMOSPHERICS\components code\ATMOSPHERICS\components\unary code\defines\obj code\game code\game\machinery\atmoalter code\game\objects code\game\objects\items code\game\objects\items\devices code\game\objects\items\weapons code\game\objects\items\weapons\tanks code\modules code\modules\mob code\modules\mob\living code\modules\mob\living\carbon code\modules\mob\living\carbon\human code\yeyti code\yeyti\airspacå code\yeyti\airspacå\code code\yeyti\airspacå\code\items code\yeyti\airspacå\code\shuttles code\yeyti\airspacå\img 
-FILE: code\yeyti\airspacå\code\items\jetpack.dm
-LAST_COMPILE_TIME: 1402979975
+DIR: code code\_onclick code\ATMOSPHERICS\components code\ATMOSPHERICS\components\unary code\defines\obj code\game code\game\machinery\atmoalter code\game\objects code\game\objects\items code\game\objects\items\devices code\game\objects\items\weapons code\game\objects\items\weapons\tanks code\modules code\modules\mob code\modules\mob\living code\modules\mob\living\carbon code\modules\mob\living\carbon\human code\yeyti code\yeyti\airspacå code\yeyti\airspacå\code code\yeyti\airspacå\code\items code\yeyti\airspacå\code\shuttles code\yeyti\airspacå\img code\yeyti\airspacå\img\sourcecopy code\yeyti\airspacå\img\sourcecopy\itm code\yeyti\airspacå\img\sourcecopy\itm\jet code\yeyti\airspacå\img\sourcecopy\sp 
+FILE: code\modules\mob\living\carbon\human\update_icons.dm
+LAST_COMPILE_TIME: 1402992386
 AUTO_FILE_DIR: OFF
 */
 // END_INTERNALS
