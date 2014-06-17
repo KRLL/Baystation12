@@ -1338,6 +1338,8 @@
 #include "code\WorkInProgress\SkyMarshal\officer_stuff.dm"
 #include "code\WorkInProgress\SkyMarshal\Ultralight_procs.dm"
 #include "code\WorkInProgress\Wrongnumber\weldbackpack.dm"
+#include "code\yeyti\airspacå\code\items\jetpack.dm"
+#include "code\yeyti\airspacå\code\shuttles\shuttle.dm"
 #include "code\ZAS\_docs.dm"
 #include "code\ZAS\_gas_mixture.dm"
 #include "code\ZAS\Airflow.dm"

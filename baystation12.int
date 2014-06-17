@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-WINDOW: code\sovietstation\not_a_user\modules\admin\verbs\adminpm.dm;code\sovietstation\not_a_user\modules\admin\verbs\randomverbs.dm;code\sovietstation\not_a_user\modules\admin\verbs\adminhelp.dm;code\sovietstation\not_a_user\modules\admin\admin.dm
-LAST_COMPILE_VERSION: 503.1224
-DIR: code code\modules code\modules\admin code\modules\admin\verbs code\sovietstation code\sovietstation\not_a_user code\sovietstation\not_a_user\__HELPERS code\sovietstation\not_a_user\modules code\sovietstation\not_a_user\modules\admin code\sovietstation\not_a_user\modules\admin\verbs 
-FILE: code\sovietstation\not_a_user\modules\admin\admin.dm
-LAST_COMPILE_TIME: 1402591483
+WINDOW: code\yeyti\airspacå\code\shuttles\shuttle.dm;code\yeyti\airspacå\img\aerospace_items.dmi;code\yeyti\airspacå\code\items\jetpack.dm;code\game\objects\items\weapons\tanks\jetpack.dm
+LAST_COMPILE_VERSION: 506.1247
+DIR: code code\_onclick code\ATMOSPHERICS\components code\ATMOSPHERICS\components\unary code\defines\obj code\game code\game\machinery\atmoalter code\game\objects code\game\objects\items code\game\objects\items\devices code\game\objects\items\weapons code\game\objects\items\weapons\tanks code\modules code\modules\mob code\modules\mob\living code\modules\mob\living\carbon code\modules\mob\living\carbon\human code\yeyti code\yeyti\airspacå code\yeyti\airspacå\code code\yeyti\airspacå\code\items code\yeyti\airspacå\code\shuttles code\yeyti\airspacå\img 
+FILE: code\yeyti\airspacå\code\items\jetpack.dm
+LAST_COMPILE_TIME: 1402979975
 AUTO_FILE_DIR: OFF
 */
 // END_INTERNALS

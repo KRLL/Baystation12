@@ -37,7 +37,8 @@
 		return
 
 
-	verb/toggle()
+/*	verb/toggle()
+
 		set name = "Toggle Jetpack"
 		set category = "Object"
 		on = !on
@@ -49,7 +50,7 @@
 			icon_state = initial(icon_state)
 //			item_state = initial(item_state)
 			ion_trail.stop()
-		return
+		return*/
 
 
 	proc/allow_thrust(num, mob/living/user as mob)
