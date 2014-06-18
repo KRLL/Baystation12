@@ -1,9 +1,10 @@
 //Module Suit
 /obj/item/clothing/suit/armor/modular
 	name = "Modular Armor"
-	icon = 'code/sovietstation/WorkInProgress/not_a_user/modular_systems/exo-suit.dmi'
+	icon = 'code/sovietstation/WorkInProgress/chaostheorist/modular_systems/exo-suit.dmi'
 	icon_state = "exosuit_base"
-	item_state = "golem"
+	icon_override = 'code/sovietstation/WorkInProgress/chaostheorist/modular_systems/exo-suit.dmi'
+	item_state = "none"
 	w_class = 4
 	flags = FPRINT | TABLEPASS
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS
@@ -58,7 +59,7 @@
 	if(!secured)
 		var/dat = "Modular Suit Modules:<br>"
 		for(var/obj/item/modular/module/M in armor_modules)
-			dat += "[M.name]: <a href='?src=\ref[src];action=detach&value=[M.type]'>DETACH</a><br>"
+			dat += "[M.name]: <a href='?src=\ref[src];action=detach&value=[M.name]'>DETACH</a><br>"
 		var/datum/browser/popup = new(user, "modular_suit", "Suit Menu", 400, 240)
 		popup.set_content(dat)
 		popup.open()
@@ -66,19 +67,30 @@
 /obj/item/clothing/suit/armor/modular/Topic(href, href_list)
 	var/action = href_list["action"]
 	if(action == "detach")
-		var/lol = href_list["value"]
-		var/obj/lol1 = lol
-		lol1.loc = loc.loc
+		var/d_name = href_list["value"]
+		for(var/obj/item/modular/module/mod in armor_modules)
+			if(mod.name == d_name)
+				if(istype(loc, /turf))
+					mod.loc = loc
+				else
+					mod.loc = loc.loc
+				slowdown -= mod.m_slowdown
+				armor_modules -= mod
+				mod.detach(src)
 
 /obj/item/clothing/suit/armor/modular/process()
 	if(loc.type == /mob/living/carbon/human)
 		var/mob/living/carbon/human/h_mob = loc
 		if(src == h_mob.wear_suit)
 			h_mob.update_icons()
-			h_mob.overlays += image('code/sovietstation/WorkInProgress/not_a_user/modular_systems/exo-suit.dmi', "exosuit_base")
 	for(var/obj/item/modular/module/M in armor_modules)
 		M.p_step()
 
+/obj/item/clothing/suit/armor/modular/proc/get_module(var/n_type)
+	for(var/obj/item/modular/module/mod in armor_modules)
+		if(mod.type == n_type)
+			return mod
+	return null
 
 /obj/item/modular/module
 	name = "Module"
