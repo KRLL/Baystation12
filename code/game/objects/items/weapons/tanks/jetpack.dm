@@ -37,20 +37,20 @@
 		return
 
 
-/*	verb/toggle()
+	verb/toggle()
 
 		set name = "Toggle Jetpack"
 		set category = "Object"
 		on = !on
 		if(on)
 			icon_state = "[icon_state]-on"
-//			item_state = "[item_state]-on"
+			item_state = "[item_state]-on"
 			ion_trail.start()
 		else
 			icon_state = initial(icon_state)
-//			item_state = initial(item_state)
+			item_state = initial(item_state)
 			ion_trail.stop()
-		return*/
+		return
 
 
 	proc/allow_thrust(num, mob/living/user as mob)
@@ -81,7 +81,7 @@
 
 	New()
 		..()
-		//src.air_contents.oxygen = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
+		src.air_contents.oxygen = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
 		air_contents.adjust((6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 		return
 
@@ -93,7 +93,7 @@
 
 	New()
 		..()
-		//src.air_contents.oxygen = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
+		src.air_contents.oxygen = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
 		air_contents.adjust((6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 		return
 
@@ -108,7 +108,7 @@
 		..()
 		src.ion_trail = new /datum/effect/effect/system/ion_trail_follow()
 		src.ion_trail.set_up(src)
-		//src.air_contents.carbon_dioxide = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
+		src.air_contents.carbon_dioxide = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
 		air_contents.adjust(0,(6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 		return
 
